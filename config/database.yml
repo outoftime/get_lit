@@ -1,0 +1,8 @@
+development:
+  adapter: postgresql
+  host: localhost
+  username: root
+  password: root
+  database: get_lit_development
+  pool: 5
+  timeout: 5000
