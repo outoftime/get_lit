@@ -19,13 +19,12 @@ class SearchesController < ApplicationController
             shelves_by_name[shelf.name] = shelf
           end
           if shelves_by_name.any?
-            best_shelf = nil
+            @shelf = nil
             book.popular_shelves.each do |name|
-              best_shelf = shelves_by_name[name]
-              break if best_shelf
+              break if @shelf = shelves_by_name[name]
             end
             @book = book
-            @drink = best_shelf.drink
+            @drink = @shelf.drink
           end
         end
       end

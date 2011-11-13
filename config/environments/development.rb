@@ -28,5 +28,5 @@ GetLit::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  config.cache_store = :dalli_store
+  config.cache_store = :dalli_store, '127.0.0.1:11211'
 end
