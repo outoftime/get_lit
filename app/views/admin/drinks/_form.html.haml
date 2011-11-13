@@ -1,4 +1,8 @@
 %div= form.label :name
 %div= form.text_field :name
 %div= form.label :recipe
-%div= form.text_area :recipe_html
+%div= form.text_area :recipe_html, :class => 'recipe_html'
+:javascript
+  $(function () {
+    $('.recipe_html').tinymce({ theme: 'simple' });
+  });

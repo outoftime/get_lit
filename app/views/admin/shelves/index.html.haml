@@ -1,4 +1,4 @@
-%p= link_to t('.new'), new_admin_shelf_path
+%p.new= link_to t('.new'), new_admin_shelf_path
 %ul.shelves
   - @shelves.each do |shelf|
     %li
@@ -9,3 +9,4 @@
       %p.destroy
         = form_tag admin_shelf_path(shelf), :method => 'delete' do
           = submit_tag t('.destroy')
+%p.pagination= paginate @shelves
