@@ -4,8 +4,9 @@
       %li= message
 
 = form_for [:admin, @shelf] do |form|
-  = render :partial => 'form', :object => form
-  = form.fields_for :drink_attributes, form.object.drink do |drink_fields|
-    = render :partial => 'admin/drinks/form', :object => drink_fields
-  %div
+  .shelf= render :partial => 'form', :object => form
+  .drink
+    = form.fields_for :drink_attributes, form.object.drink do |drink_fields|
+      = render :partial => 'admin/drinks/form', :object => drink_fields
+  .submit
     = form.submit t('.submit')

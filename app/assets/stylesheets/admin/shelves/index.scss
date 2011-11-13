@@ -1,0 +1,44 @@
+
+.Admin.Shelves#Index {
+	.new {
+		a {
+			display: inline-block;
+			height: 60px;
+			padding-left: 72px;
+			padding-right: 12px;
+			line-height: 60px;
+			font-size: 24px;
+			font-weight: bold;
+			background: url(/images/new.png) no-repeat 12px 50%;
+
+			color: inherit;
+			text-decoration: none;
+			border: 1px solid #ddd;
+			border-radius: 6px;
+		}
+	}
+
+	.shelves {
+		overflow: hidden;
+		
+		.shelf, .drink, .destroy {
+			display: inline-block;
+			margin: 0 10px;
+			line-height: 32px;
+			width: 100px;
+		}
+
+		.shelf {
+			margin-left: 0;
+		}
+
+		input {
+			border: none;
+			text-indent: -1000em;
+			background: url(/images/remove.png) no-repeat top left;
+			height: 16px;
+			width: 16px;
+			cursor: pointer;
+		}
+	}
+}

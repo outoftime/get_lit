@@ -1,4 +1,4 @@
-%div= form.label :name
+%div= form.label :name, Drink.human_attribute_name(:name)
 %div= form.text_field :name
 %div= form.label :recipe
 %div= form.text_area :recipe_html, :class => 'recipe_html'

@@ -5,6 +5,8 @@
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %body
-    %h1= t 'global.site_name'
-    = yield
+  %body{ :class => dom_class_for_controller, :id => dom_id_for_action }
+    #content
+      #header
+        %h1= t 'global.site_name'
+      #well= yield

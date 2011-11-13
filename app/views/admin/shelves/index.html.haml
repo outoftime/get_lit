@@ -2,11 +2,10 @@
 %ul.shelves
   - @shelves.each do |shelf|
     %li
-      %h2= shelf.name
+      .shelf= link_to shelf.name, edit_admin_shelf_path(shelf)
       - if shelf.drink
-        %p.drink= shelf.drink.name
-      %p.edit= link_to t('.edit'), edit_admin_shelf_path(shelf)
-      %p.destroy
+        .drink= shelf.drink.name
+      .destroy
         = form_tag admin_shelf_path(shelf), :method => 'delete' do
           = submit_tag t('.destroy')
 %p.pagination= paginate @shelves

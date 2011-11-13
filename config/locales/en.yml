@@ -5,7 +5,7 @@ en:
   activerecord:
     attributes:
       shelf:
-        name: Name
+        name: Shelf Name
         explanation: Explanation
       drink:
         name: Drink Name
@@ -17,6 +17,7 @@ en:
       edit:
         submit: Save Changes
       index:
+        new: New Shelf
         edit: Edit
         destroy: Delete
   global:
