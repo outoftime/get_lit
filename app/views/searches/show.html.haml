@@ -1,6 +1,12 @@
-= image_tag @book.image_url
-%h2= t '.header', :drink => @drink.name, :book => @book.title
-- if @shelf.explanation.present?
-  %p.explanation= @shelf.explanation
-- if @drink.recipe_html.present?
-  %p.recipe= sanitize @drink.recipe_html
+- if @drink.blank?
+  - if @book.blank?
+    %h2= t '.book_not_found'
+  - elsif @drink.blank?
+    %h2= t '.drink_not_found', :book => @book.title
+- else
+  = image_tag @book.image_url
+  %h2= t '.header', :drink => @drink.name, :book => @book.title
+  - if @shelf.explanation.present?
+    %p.explanation= @shelf.explanation
+  - if @drink.recipe_html.present?
+    %p.recipe= sanitize @drink.recipe_html
