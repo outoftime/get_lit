@@ -1,0 +1,4 @@
+= image_tag @book.image_url
+%h2= t '.header', :drink => @drink.name, :book => @book.title
+- if @drink.recipe_html.present?
+  %p.recipe= @drink.recipe_html

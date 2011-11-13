@@ -11,21 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111112175456) do
+ActiveRecord::Schema.define(:version => 20111113153822) do
 
   create_table "drinks", :force => true do |t|
     t.string   "name",        :null => false
     t.text     "recipe_html", :null => false
-    t.text     "explanation"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
   create_table "shelves", :force => true do |t|
     t.integer  "drink_id"
-    t.string   "name",       :limit => 50, :null => false
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.string   "name",        :limit => 50, :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.text     "explanation"
   end
 
   add_index "shelves", ["name"], :name => "index_shelves_on_name", :unique => true

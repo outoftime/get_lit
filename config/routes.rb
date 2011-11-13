@@ -55,7 +55,11 @@ GetLit::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
+  namespace :admin do
+    resources :shelves, :except => %w(show)
+  end
   
-  get '/books/:title', :to => 'searches#show'
+  get '/search/:title', :to => 'searches#show'
+  get '/search', :to => 'searches#show'
   root :to => 'searches#new'
 end

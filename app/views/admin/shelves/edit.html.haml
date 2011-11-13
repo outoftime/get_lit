@@ -1,0 +1,10 @@
+- if @shelf.errors.any?
+  %ul.errors
+    - @shelf.errors.full_messages.each do |message|
+      %li= message
+
+= form_for [:admin, @shelf] do |form|
+  = render :partial => 'form', :object => form
+  %div
+    = form.submit t('.submit')
+

@@ -1,0 +1,6 @@
+%div= form.label :name
+%div= form.text_field :name
+%div= form.label :explanation
+%div= form.text_area :explanation
+%div= form.label :drink
+%div= form.collection_select :drink_id, Drink.all, :id, :name, :include_blank => t('.new_drink')

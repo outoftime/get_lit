@@ -2,4 +2,27 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      shelf:
+        name: Name
+        explanation: Explanation
+      drink:
+        name: Drink Name
+        recipe_html: Recipe
+  admin:
+    shelves:
+      new:
+        submit: Create Shelf
+      edit:
+        submit: Save Changes
+      index:
+        edit: Edit
+        destroy: Delete
+  global:
+    site_name: Get Lit
+  searches:
+    new:
+      submit: Drinking Time
+    show:
+      header: "You're reading %{book}. How about sipping on a %{drink}?"

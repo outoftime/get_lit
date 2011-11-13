@@ -1,0 +1,11 @@
+%p= link_to t('.new'), new_admin_shelf_path
+%ul.shelves
+  - @shelves.each do |shelf|
+    %li
+      %h2= shelf.name
+      - if shelf.drink
+        %p.drink= shelf.drink.name
+      %p.edit= link_to t('.edit'), edit_admin_shelf_path(shelf)
+      %p.destroy
+        = form_tag admin_shelf_path(shelf), :method => 'delete' do
+          = submit_tag t('.destroy')

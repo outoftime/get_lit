@@ -1,8 +1,3 @@
-require 'active_support/core_ext'
-require 'hashie'
-require 'nokogiri'
-require 'typhoeus'
-
 module GoodReads
 
   extend self

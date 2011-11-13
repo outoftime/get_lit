@@ -3,11 +3,9 @@ class SearchesController < ApplicationController
   end
 
   def show
-    content_type :json
-
     title = params[:title]
     if title
-      book = CACHE.fetch("book/#{title.downcase.gsub(/\W+/, '-')}") do
+      book = Rails.cache.fetch("book/#{title.downcase.gsub(/\W+/, '-')}") do
         results = GoodReads.search_books(:title, title)
         if results.any?
           book = GoodReads.get_book(results.first.id)

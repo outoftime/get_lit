@@ -1,0 +1,11 @@
+- if @shelf.errors.any?
+  %ul.errors
+    - @shelf.errors.full_messages.each do |message|
+      %li= message
+
+= form_for [:admin, @shelf] do |form|
+  = render :partial => 'form', :object => form
+  = form.fields_for :drink_attributes, form.object.drink do |drink_fields|
+    = render :partial => 'admin/drinks/form', :object => drink_fields
+  %div
+    = form.submit t('.submit')
