@@ -43,8 +43,8 @@ module GoodReads
       :path => path,
       :query => query.merge(:key => API_KEY).to_query
     ).to_s
-    response = Typhoeus::Request.get(uri)
-    Nokogiri::XML(response.body)
+    response = Net::HTTP.get(uri)
+    Nokogiri::XML(response)
   end
 
 end
