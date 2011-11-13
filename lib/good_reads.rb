@@ -42,7 +42,7 @@ module GoodReads
       :host => 'www.goodreads.com',
       :path => path,
       :query => query.merge(:key => API_KEY).to_query
-    ).to_s
+    )
     response = Net::HTTP.get(uri)
     Nokogiri::XML(response)
   end
