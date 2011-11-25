@@ -3,5 +3,5 @@ class Drink < ActiveRecord::Base
 
   has_many :shelves
 
-  validates_presence_of :name, :recipe_html
+  validates_presence_of :name
 end
