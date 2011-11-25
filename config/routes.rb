@@ -57,6 +57,7 @@ GetLit::Application.routes.draw do
   # match ':controller(/:action(/:id(.:format)))'
   namespace :admin do
     resources :shelves, :except => %w(show)
+    resources :drinks, :only => %w(index edit update)
   end
   
   get '/search/:title', :to => 'searches#show'

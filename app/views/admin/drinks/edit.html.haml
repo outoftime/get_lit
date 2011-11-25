@@ -1,0 +1,7 @@
+- if @drink.errors.any?
+  %ul.errors
+    - @drink.errors.full_messages.each do |message|
+      %li= message
+= form_for [:admin, @drink] do |form|
+  = render :partial => 'form', :object => form
+  %div= form.submit t('.submit')

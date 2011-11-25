@@ -1,6 +1,6 @@
 module Admin
   class ShelvesController < AdminController
-    before_filter :find_shelf, :only => %w(edit update destroy)
+    before_filter :load_shelf, :only => %w(edit update destroy)
     before_filter :sanitize_params, :only => %w(create)
 
     def index
@@ -36,7 +36,7 @@ module Admin
 
     private
 
-    def find_shelf
+    def load_shelf
       @shelf = Shelf.find(params[:id])
     end
 

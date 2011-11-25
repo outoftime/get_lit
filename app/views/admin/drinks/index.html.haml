@@ -1,0 +1,5 @@
+%ul.drinks
+  - @drinks.each do |drink|
+    %li
+      .drink= link_to drink.name, edit_admin_drink_path(drink)
+%p.pagination= paginate @drinks

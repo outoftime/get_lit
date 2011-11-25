@@ -11,6 +11,9 @@ en:
         name: Drink Name
         recipe_html: Recipe
   admin:
+    drinks:
+      edit:
+        submit: Save
     shelves:
       new:
         submit: Create Shelf
