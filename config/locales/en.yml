@@ -28,4 +28,3 @@ en:
     show:
       book_not_found: "As it turns out, we've never heard of that book. So you might as well go drink something we've never heard of too."
       drink_not_found: "Huh, we can't think of anything good for %{book}. Why not just grab a couple forties and make a night of it?"
-      header: "You're reading %{book}. How about sipping on a %{drink}?"
