@@ -21,6 +21,6 @@ end
 
 group :development do
   gem 'heroku'
-  gem 'ruby-debug19'
+  gem 'ruby-debug19', :require => nil
   gem 'thin'
 end
