@@ -1,0 +1,342 @@
+/* mixin */
+@mixin round-all($radius) {
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin dropshadow($params) {
+	box-shadow: $params;
+	-webkit-box-shadow: $params;
+	-moz-box-shadow: $params;
+}
+
+@mixin gradient-bg($start, $end) {
+	background: -moz-linear-gradient(top,$start 0,$end 100%);
+	background: -webkit-gradient(linear,0% 0,0% 100%,from($start),to($end));
+}
+
+/* reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1.4;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* global */
+body {
+	font: normal 12px/140% Helvetica, Verdana, Arial, sans-serif;
+	background: #FEEBE1;
+}
+
+#wrapper {
+	width: 862px;
+	margin: 28px auto 0;
+}
+
+/* main */
+.main {
+	background: url(../images/main-circle.png) no-repeat center center;
+	float: left;
+	height: 542px;
+	margin: 0 84px 30px;
+	width: 486px;
+}
+
+.footer {
+	clear: left;
+	margin: 0 auto;
+	width: 252px;
+	
+	.social {
+		clear: right;
+		width: 158px;
+		height: 60px;
+		margin: 0 auto 10px;
+		
+		:first-child {
+			margin: 0 10px 0 0
+		}
+	}
+	
+	.recommend {
+		&:active {
+			border-bottom: 1px solid #fff;
+		}
+	}
+}
+
+/* sidebars */
+.thin-col {
+	margin: 20px 0 0;
+	float: left;
+	width: 104px;
+}
+
+.drink-type {
+	width: 104px;
+	height: 104px;
+	margin: 0 0 24px;
+	
+	&.not-active {
+		background: url(../images/inactive-small-circle.png) no-repeat center center;
+	}
+	
+	&.active {
+		background: url(../images/active-small-circle.png) no-repeat center center;
+	}
+}
+
+/* type */
+h1 {
+	font-family: georgia, serif;
+	font-weight: bold;
+	color: #FFF;
+	font-size: 32px;
+	text-shadow: 0 1px 1px #91B9A6;
+	line-height: 32px;
+}
+
+h2 {
+	color: #636363;
+	font-size: 24px;
+	line-height: 24px;
+	font-weight: normal;
+}
+
+li {
+	color: #636363;
+	font-size: 18px;
+	line-height: 18px;
+	font-weight: lighter;
+}
+
+sup {
+	vertical-align: 0;
+	position: relative; 
+	bottom: 1ex;
+	font-size: 10px;
+}
+
+/* buttons */
+.recommend {
+	background: #F9DB5F;
+	border-top: 1px solid #FEF5A0;
+	border-width: 1px 0 0;
+	color: #FFF;
+	font-size: 18px;
+	font-weight: bold;
+	text-shadow: 0 -1px #D5BF53;
+	padding: 20px 50px;
+	display: block;
+	text-decoration: none;
+	@include gradient-bg(#FDEF6D, #F5CB53);
+	@include round-all(10px);
+	@include dropshadow(0 1px 1px 0 rgba(0, 0, 0, 0.2));
+	
+	&:hover {
+	    background: #F0D14A;
+		@include gradient-bg(#FDF461, #E6B738);
+	}
+
+	&:active {
+		border-top-color: #81792A;
+		border-bottom: 1px solid #badacc;
+		@include dropshadow(inset 0 1px 2px 0 rgba(0, 0, 0, 0.5));
+	}
+}
+
+.social-button {
+	background: #F1E4DC;
+	padding: 10px;
+	display: block;
+	width: 53px;
+	float: left;
+	@include round-all(10px);
+	@include dropshadow(0 1px 1px 0 rgba(0, 0, 0, 0.2));
+	@include gradient-bg(#FCF2EB, #EADAD1);
+	
+	&:hover {
+	    background: #F0D14A;
+		@include gradient-bg(#FCF2EB, #E1CFC5);
+	}
+
+	&:active {
+		border-bottom: 1px solid #fff;
+		@include dropshadow(inset 0 1px 2px 0 rgba(0, 0, 0, 0.5));
+	}
+}
+
+/* content */
+#home {
+	margin: 155px auto 0;
+	width: 375px;
+	
+	h1 {
+		margin: 0 0 36px;
+	}
+	
+	.title-input {
+		height: 54px;
+		width: 352px;
+		border: 0;
+		@include round-all(10px);
+		@include dropshadow(inset 0 1px 2px 0 rgba(0, 0, 0, 0.5));
+		font-size: 24px;
+		text-indent: 10px;
+		color: #777;
+		margin: 4px 0 0 10px;
+	}
+	
+	.recommend {
+		margin: 40px 0 0 42px;
+	}
+}
+
+#book {
+	margin: 125px auto 0;
+	
+	.cover {
+		float: left;
+		width: 142px;
+		
+		img {
+			border: 6px solid #fff;
+			@include round-all(5px);
+			width: 130px;
+		}
+	}
+	
+	.recipe {
+		float: left;
+		width: 285px;
+		margin: 0 0 0 25px;
+	}
+	
+	h2 {
+		margin: 15px 0 0;
+	}
+	
+	ul {
+		margin: 5px 0 0;
+		list-style-type: disc;
+		list-style-position: inside;
+	}
+}
+
+/* drinks */
+.drink {
+	width: 105px;
+	height: 104px;
+}
+
+.not-active {
+	#beer {
+        background: url(../images/drinks/beer-inactive.png) no-repeat center center;
+		width: 108px;
+	}
+	
+	#highball {
+        background: url(../images/drinks/highball-inactive.png) no-repeat center center;
+	}
+	
+	#wine {
+        background: url(../images/drinks/wine-inactive.png) no-repeat center center;
+	}
+	
+	#teapot {
+        background: url(../images/drinks/teapot-inactive.png) no-repeat center center;
+	}
+	
+	#cocktail {
+        background: url(../images/drinks/cocktail-inactive.png) no-repeat center center;
+	}
+	
+	#shots {
+        background: url(../images/drinks/shots-inactive.png) no-repeat center center;
+	}
+	
+	#testtube {
+        background: url(../images/drinks/testtube-inactive.png) no-repeat center center;
+		width: 108px;
+	}
+	
+	#lowball {
+        background: url(../images/drinks/lowball-inactive.png) no-repeat center center;
+	}
+}
+
+.active {
+	#beer {
+        background: url(../images/drinks/beer-active.png) no-repeat center center;
+		width: 108px;
+	}
+	
+	#highball {
+        background: url(../images/drinks/highball-active.png) no-repeat center center;
+	}
+	
+	#wine {
+        background: url(../images/drinks/wine-active.png) no-repeat center center;
+	}
+	
+	#teapot {
+        background: url(../images/drinks/teapot-active.png) no-repeat center center;
+	}
+	
+	#cocktail {
+        background: url(../images/drinks/cocktail-active.png) no-repeat center center;
+	}
+	
+	#shots {
+        background: url(../images/drinks/shots-active.png) no-repeat center center;
+	}
+	
+	#testtube {
+        background: url(../images/drinks/testtube-active.png) no-repeat center center;
+		width: 108px;
+	}
+	
+	#lowball {
+        background: url(../images/drinks/lowball-active.png) no-repeat center center;
+	}
+}
