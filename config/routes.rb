@@ -60,7 +60,7 @@ GetLit::Application.routes.draw do
     resources :drinks, :only => %w(index edit update)
   end
   
-  get '/search/:title', :to => 'searches#show'
   get '/search', :to => 'searches#show'
+  get '/:title', :to => 'searches#show'
   root :to => 'searches#new'
 end
