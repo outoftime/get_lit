@@ -1,4 +1,4 @@
-= render :partial => 'types', :object => %w(beer highball wine teapot)
+= render :partial => 'types', :object => Drink::TYPES[0...4]
 
 .main
   #logo
@@ -8,4 +8,4 @@
       %input.title-input{:type => "text", :name => "title", :placeholder => "Book title"}
       %button.recommend{:type => "submit"} What should I drink?
 
-= render :partial => 'types', :object => %w(cocktail shots testtube lowball)
+= render :partial => 'types', :object => Drink::TYPES[4..-1]

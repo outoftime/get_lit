@@ -10,6 +10,19 @@ en:
       drink:
         name: Drink Name
         recipe_html: Recipe
+        drink_type: Type
+    labels:
+      drink:
+        drink_type:
+          beer: Beer
+          highball: Highball
+          wine: Wine
+          teapot: Non-alcoholic
+          cocktail: Cocktail
+          shots: Shot
+          testtube: Unknown
+          lowball: Lowball
+
   admin:
     drinks:
       edit:

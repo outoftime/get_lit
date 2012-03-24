@@ -1,5 +1,7 @@
 %div= form.label :name, Drink.human_attribute_name(:name)
 %div= form.text_field :name
+%div= form.label :drink_type
+%div= form.select :drink_type, Drink.options_for_drink_type_select
 %div= form.label :recipe
 %div= form.text_area :recipe_html, :class => 'recipe_html'
 :javascript

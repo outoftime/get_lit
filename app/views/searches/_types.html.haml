@@ -1,4 +1,4 @@
 .thin-col
   - for type in types
-    .drink-type.not-active
+    .drink-type{:class=>@drink.try(:drink_type) == type ? 'active' : 'not-active'}
       .drink{:id=>type}
