@@ -9,4 +9,12 @@
     #content
       #header
         %h1= t 'global.site_name'
-      #well= yield
+      #well
+        = yield
+      .footer
+        .social
+          %a.social-button{:href => "/"}
+            %img{:src => "../images/twitter.png"}
+          %a.social-button{:href => "/"}
+            %img{:src => "../images/facebook.png"}
+        %a.recommend{:href => "/"} I'm also reading...
