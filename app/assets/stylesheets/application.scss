@@ -75,7 +75,7 @@ body {
 
 /* main */
 .main {
-	background: url(../images/main-circle.png) no-repeat center center;
+	background: url(/assets/main-circle.png) no-repeat center center;
 	float: left;
 	height: 542px;
 	margin: 0 84px 30px;
@@ -118,11 +118,11 @@ body {
 	margin: 0 0 24px;
 	
 	&.not-active {
-		background: url(../images/inactive-small-circle.png) no-repeat center center;
+		background: url(/assets/inactive-small-circle.png) no-repeat center center;
 	}
 	
 	&.active {
-		background: url(../images/active-small-circle.png) no-repeat center center;
+		background: url(/assets/active-small-circle.png) no-repeat center center;
 	}
 }
 
@@ -271,72 +271,72 @@ sup {
 
 .not-active {
 	#beer {
-        background: url(../images/drinks/beer-inactive.png) no-repeat center center;
+        background: url(/assets/drinks/beer-inactive.png) no-repeat center center;
 		width: 108px;
 	}
 	
 	#highball {
-        background: url(../images/drinks/highball-inactive.png) no-repeat center center;
+        background: url(/assets/drinks/highball-inactive.png) no-repeat center center;
 	}
 	
 	#wine {
-        background: url(../images/drinks/wine-inactive.png) no-repeat center center;
+        background: url(/assets/drinks/wine-inactive.png) no-repeat center center;
 	}
 	
 	#teapot {
-        background: url(../images/drinks/teapot-inactive.png) no-repeat center center;
+        background: url(/assets/drinks/teapot-inactive.png) no-repeat center center;
 	}
 	
 	#cocktail {
-        background: url(../images/drinks/cocktail-inactive.png) no-repeat center center;
+        background: url(/assets/drinks/cocktail-inactive.png) no-repeat center center;
 	}
 	
 	#shots {
-        background: url(../images/drinks/shots-inactive.png) no-repeat center center;
+        background: url(/assets/drinks/shots-inactive.png) no-repeat center center;
 	}
 	
 	#testtube {
-        background: url(../images/drinks/testtube-inactive.png) no-repeat center center;
+        background: url(/assets/drinks/testtube-inactive.png) no-repeat center center;
 		width: 108px;
 	}
 	
 	#lowball {
-        background: url(../images/drinks/lowball-inactive.png) no-repeat center center;
+        background: url(/assets/drinks/lowball-inactive.png) no-repeat center center;
 	}
 }
 
 .active {
 	#beer {
-        background: url(../images/drinks/beer-active.png) no-repeat center center;
+        background: url(/assets/drinks/beer-active.png) no-repeat center center;
 		width: 108px;
 	}
 	
 	#highball {
-        background: url(../images/drinks/highball-active.png) no-repeat center center;
+        background: url(/assets/drinks/highball-active.png) no-repeat center center;
 	}
 	
 	#wine {
-        background: url(../images/drinks/wine-active.png) no-repeat center center;
+        background: url(/assets/drinks/wine-active.png) no-repeat center center;
 	}
 	
 	#teapot {
-        background: url(../images/drinks/teapot-active.png) no-repeat center center;
+        background: url(/assets/drinks/teapot-active.png) no-repeat center center;
 	}
 	
 	#cocktail {
-        background: url(../images/drinks/cocktail-active.png) no-repeat center center;
+        background: url(/assets/drinks/cocktail-active.png) no-repeat center center;
 	}
 	
 	#shots {
-        background: url(../images/drinks/shots-active.png) no-repeat center center;
+        background: url(/assets/drinks/shots-active.png) no-repeat center center;
 	}
 	
 	#testtube {
-        background: url(../images/drinks/testtube-active.png) no-repeat center center;
+        background: url(/assets/drinks/testtube-active.png) no-repeat center center;
 		width: 108px;
 	}
 	
 	#lowball {
-        background: url(../images/drinks/lowball-active.png) no-repeat center center;
+        background: url(/assets/drinks/lowball-active.png) no-repeat center center;
 	}
 }
