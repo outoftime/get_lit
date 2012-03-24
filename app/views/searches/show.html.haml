@@ -1,12 +1,51 @@
-- if @drink.blank?
-  - if @book.blank?
-    %h2= t '.book_not_found'
-  - elsif @drink.blank?
-    %h2= t '.drink_not_found', :book => @book.title
-- else
-  = image_tag @book.image_url
-  %h2= t '.header', :drink => @drink.name, :book => @book.title
-  - if @shelf.explanation.present?
-    %p.explanation= @shelf.explanation
-  - if @drink.recipe_html.present?
-    %p.recipe= sanitize @drink.recipe_html
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang => "en"}
+  %head
+    %meta{"http-equiv" => "Content-Type", :content => "text/html; charset=utf-8"}
+    %meta{:name => "language", :content => "en"}
+    %meta{:name => "description", :content => "Get Lit!"}
+    %meta{:name => "keywords", :content => "literature, books, drink, mixology, liquor, alcohol, beer, read, well-read, cocktail, scholarly"}
+  
+    %link{:rel => "stylesheet", :type => "text/css", :href => "../sass/style.css"}
+    %link{:rel => "shortcut icon", :type => "image/x-icon", :href => "../images/favicon.ico"}
+    
+    %title Get Lit
+  %body
+    #wrapper
+      .thin-col
+        .drink-type.not-active
+          .drink#beer
+        .drink-type.active
+          .drink#highball
+        .drink-type.not-active
+          .drink#wine
+        .drink-type.not-active
+          .drink#teapot
+      .main
+        #logo
+        .content#book
+          .cover
+            %img{:src => @book.image_url}
+          .recipe
+            %h1== You're reading #{@book.title}.
+            %h2 How about sipping on a #{@drink.name}?
+            - if @drink.recipe_html.present?
+              = raw @drink.recipe_html
+            - if @shelf.explanation.present?
+              %p.explanation= @shelf.explanation
+      .thin-col
+        .drink-type.not-active
+          .drink#cocktail
+        .drink-type.not-active
+          .drink#shots
+        .drink-type.not-active
+          .drink#testtube
+        .drink-type.not-active
+          .drink#lowball
+      .footer
+        .social
+          %a.social-button{:href => "/"}
+            %img{:src => "../images/twitter.png"}
+          %a.social-button{:href => "/"}
+            %img{:src => "../images/facebook.png"}
+        %a.recommend{:href => "/"} I'm also reading...
