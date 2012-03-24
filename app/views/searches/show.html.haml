@@ -1,12 +1,5 @@
-.thin-col
-  .drink-type.not-active
-    .drink#beer
-  .drink-type.active
-    .drink#highball
-  .drink-type.not-active
-    .drink#wine
-  .drink-type.not-active
-    .drink#teapot
+= render :partial => 'types', :object => %w(beer highball wine teapot)
+
 .main
   #logo
   .content#book
@@ -19,12 +12,5 @@
         = raw @drink.recipe_html
       - if @shelf.explanation.present?
         %p.explanation= @shelf.explanation
-.thin-col
-  .drink-type.not-active
-    .drink#cocktail
-  .drink-type.not-active
-    .drink#shots
-  .drink-type.not-active
-    .drink#testtube
-  .drink-type.not-active
-    .drink#lowball
+
+= render :partial => 'types', :object => %w(cocktail shots testtube lowball)
