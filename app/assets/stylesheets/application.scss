@@ -70,7 +70,16 @@ body {
 
 #wrapper {
 	width: 862px;
-	margin: 28px auto 0;
+	margin: 0 auto;
+	position: relative;
+}
+
+#header {
+	background: url(/assets/header.png) no-repeat center center;
+	width: 234px;
+	height: 165px;
+	position: absolute;
+	left: 314px;
 }
 
 /* main */
@@ -78,7 +87,7 @@ body {
 	background: url(/assets/main-circle.png) no-repeat center center;
 	float: left;
 	height: 542px;
-	margin: 0 84px 30px;
+	margin: 28px 84px 30px;
 	width: 486px;
 }
 
@@ -107,7 +116,7 @@ body {
 
 /* sidebars */
 .thin-col {
-	margin: 20px 0 0;
+	margin: 48px 0 0;
 	float: left;
 	width: 104px;
 }
