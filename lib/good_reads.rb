@@ -5,7 +5,7 @@ module GoodReads
   API_KEY = ENV['GOODREADS_API_KEY']
 
   def get_book(id)
-    response = get("/book/show/#{id}.xml")
+    response = get("/book/show", :format => 'xml', :id => id)
     book = response.at_xpath('/GoodreadsResponse/book')
     Hashie::Mash.new(
       :id => book.at_xpath('./id').text.to_i,
@@ -44,6 +44,7 @@ module GoodReads
       :query => query.merge(:key => API_KEY).to_query
     )
     response = Net::HTTP.get(uri)
+    puts response
     Nokogiri::XML(response)
   end
 
