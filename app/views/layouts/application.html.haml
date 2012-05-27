@@ -3,22 +3,22 @@
   %head
     %title= t 'global.site_name'
     %meta{"http-equiv" => "Content-Type", :content => "text/html; charset=utf-8"}
-		%meta{:name => "language", :content => "en"}
-		%meta{:name => "description", :content => "Get Lit!"}
-		%meta{:name => "keywords", :content => "literature, books, drink, mixology, liquor, alcohol, beer, read, well-read, cocktail, scholarly"}
+    %meta{:name => "language", :content => "en"}
+    %meta{:name => "description", :content => "Get Lit!"}
+    %meta{:name => "keywords", :content => "literature, books, drink, mixology, liquor, alcohol, beer, read, well-read, cocktail, scholarly"}
 
-    = favicon_link_tag
+    = favicon_link_tag '/assets/favicon.ico'
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body{ :class => dom_class_for_controller, :id => dom_id_for_action }
-      #wrapper
-        #header
-        = yield
-        .footer
-          .social
-            %a.social-button{:href => "/"}
-              %img{:src => "/assets/twitter.png"}
-            %a.social-button{:href => "/"}
-              %img{:src => "/assets/facebook.png"}
-          %a.recommend{:href => "/"} I'm also reading...
+    #wrapper
+      #header
+      = yield
+      .footer
+        .social
+          %a.social-button{:href => "/"}
+            %img{:src => "/assets/twitter.png"}
+          %a.social-button{:href => "/"}
+            %img{:src => "/assets/facebook.png"}
+        %a.recommend{:href => "/"} I'm also reading...
