@@ -1,3 +1,3 @@
-//= jquery
-//= tinymce
-//= admin/shelves/_form.js
+//= require jquery
+//= require tinymce-jquery
+//= require admin/shelves/_form.js
