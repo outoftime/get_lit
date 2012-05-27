@@ -1,0 +1,8 @@
+%html
+  %head
+    %title Get Lit Super CMS
+    = stylesheet_link_tag 'admin'
+    = javascript_include_tag 'admin'
+
+  %body{ :class => dom_class_for_controller, :id => dom_id_for_action }
+    #content= yield
