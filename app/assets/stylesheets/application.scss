@@ -82,6 +82,10 @@ body {
 	left: 314px;
 }
 
+.Searches#Show #header {
+    margin-top: -56px;
+}
+
 /* main */
 .main {
 	background: url(/assets/main-circle.png) no-repeat center center;
@@ -254,7 +258,7 @@ sup {
 			width: 130px;
 		}
 	}
-	
+
 	.recipe {
 		float: left;
 		width: 285px;
@@ -270,6 +274,16 @@ sup {
 		list-style-type: disc;
 		list-style-position: inside;
 	}
+}
+
+#book.notfound {
+    .recipe {
+        margin-top: 140px;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
 }
 
 /* drinks */

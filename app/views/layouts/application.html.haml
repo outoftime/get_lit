@@ -1,7 +1,11 @@
 !!! 5
 %html
   %head
-    %title= t 'global.site_name'
+    %title
+      = t 'global.site_name'
+      - if @book
+        &ndash;
+        = @book.title
     %meta{"http-equiv" => "Content-Type", :content => "text/html; charset=utf-8"}
     %meta{:name => "language", :content => "en"}
     %meta{:name => "description", :content => "Get Lit!"}
@@ -13,12 +17,6 @@
     = csrf_meta_tags
   %body{ :class => dom_class_for_controller, :id => dom_id_for_action }
     #wrapper
-      #header
+      %a{:href => '/'}
+        #header
       = yield
-      .footer
-        .social
-          %a.social-button{:href => "/"}
-            %img{:src => "/assets/twitter.png"}
-          %a.social-button{:href => "/"}
-            %img{:src => "/assets/facebook.png"}
-        %a.recommend{:href => "/"} I'm also reading...

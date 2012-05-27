@@ -2,15 +2,31 @@
 
 .main
   #logo
-  .content#book
-    .cover
-      %img{:src => @book.image_url}
-    .recipe
-      %h1== You're reading #{@book.title}.
-      %h2 How about sipping on a #{@drink.name}?
-      - if @drink.recipe_html.present?
-        = raw @drink.recipe_html
-      - if @shelf.explanation.present?
-        %p.explanation= @shelf.explanation
+  - if @book
+    .content#book
+      .cover
+        %img{:src => @book.image_url}
+      .recipe
+        %h1== You're reading #{@book.title}.
+        - if @drink
+          %h2 How about sipping on a #{@drink.name}?
+          - if @drink.recipe_html.present?
+            = raw @drink.recipe_html
+          - if @shelf.explanation.present?
+            %p.explanation= @shelf.explanation
+        - else
+          %h2 We've never heard of it. Grab a couple shots of the cheap stuff and soldier on.
+  - else
+    .content.notfound#book
+      .recipe
+        %h1== #{params[:title]}? Never heard of it. Grab a couple shots of the cheap stuff and soldier on.
 
 = render :partial => 'types', :object => Drink::TYPES[4..-1]
+.footer
+  - if @book
+    .social
+      %a.social-button{:href => twitter_share_link(@book, @drink)}
+        %img{:src => "/assets/twitter.png"}
+      %a.social-button{:href => facebook_share_link(@book, @drink)}
+        %img{:src => "/assets/facebook.png"}
+  %a.recommend{:href => "/"} I'm also reading...
