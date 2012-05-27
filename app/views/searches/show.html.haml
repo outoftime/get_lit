@@ -23,7 +23,7 @@
 
 = render :partial => 'types', :object => Drink::TYPES[4..-1]
 .footer
-  - if @book
+  - if @book && @drink
     .social
       %a.social-button{:href => twitter_share_link(@book, @drink)}
         %img{:src => "/assets/twitter.png"}

@@ -8,8 +8,7 @@ module ApplicationHelper
   end
 
   def twitter_share_link(book, drink)
-    name = drink.try(:name) || 'dingus'
-    status = "Enjoying #{book.title} with a #{name} on the side. http://#{request.host_with_port}/#{book.title}"
+    status = "Enjoying #{book.title} with a #{drink.name} on the side. http://#{request.host_with_port}/#{book.title}"
     URI::HTTP.build(
       :host => 'twitter.com',
       :path => '/home',
@@ -18,7 +17,6 @@ module ApplicationHelper
   end
 
   def facebook_share_link(book, drink)
-    name = drink.try(:name) || 'dingus'
     url =  "http://#{request.host_with_port}/#{book.title}"
     URI::HTTP.build(
       :host => 'www.facebook.com',
